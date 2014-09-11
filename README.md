@@ -117,3 +117,21 @@ ErrSyncTimeout is returned
 func (c *ElementStore) WriteError() error
 ```
 Check to see if a write error has occurred
+
+#### Example
+
+```
+$ go test -bench .
+PASS
+BenchmarkCreation          		   10000            101247 ns/op
+BenchmarkInsertionMediumDataCache16        10000            114098 ns/op
+BenchmarkInsertionSmallDataCache16         10000            129615 ns/op
+BenchmarkInsertionMediumDataCache128       10000            119313 ns/op
+BenchmarkInsertionSmallDataCache128        10000            113977 ns/op
+BenchmarkInsertionMediumDataCache1024      10000            131640 ns/op
+BenchmarkInsertionSmallDataCache1024       10000            108901 ns/op
+BenchmarkCacheReads      		 5000000               720 ns/op
+BenchmarkDiskReads       		 1000000             17231 ns/op
+ok      elstore 30.041s
+```
+
